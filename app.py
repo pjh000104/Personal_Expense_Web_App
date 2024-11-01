@@ -3,16 +3,34 @@ import json
 app = Flask(__name__)
 
 
+def create_file():
+    with open("info.json", "w") as file:
+        json.dump({
+                "total_balance":0, "food":0, "house_hold":0, "clothing":0,
+                "personal_expense":0, "subscription":0,"housing_expense":0,
+                "insurance":0,"other":0}, file)
+
+
+create_file()
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    start_software()
-    data = get_data()
+
+    return render_template("index.html")
 
 
 @app.route('/initialize_balance', methods=['GET', 'POST'])
 def initialize_balance():
     # get the data and save it in the json
-    return
+    json_data = get_data()
+    request_data = request.form
+    write_data(request_data, json_data)
+
+
+    
+    return render_template("index.html")
+
 
 
 @app.route('/spend', methods=['GET', 'POST'])
@@ -72,6 +90,44 @@ def start_software():
         json.dump(data, file)
 
 
+def write_data(request_data, json_data):
+    sent = True
+    check = 0
+    categories = ['total_balance', 'food', 'house_hold', 'clothing', 
+                'personal_expense', 'subscription',
+                'housing_expense', 'insurance', 'other']
+
+    while True:
+        total_balance = request_data.get("total_balance")
+        if is_float(total_balance):
+            json_data['total_balance'] = float(total_balance)
+            break
+        else:
+            print("Please input an integer or float")
+
+    while sent:
+        for c in range(1, len(categories)):
+            if categories[c] == 'other':
+                json_data['other'] = float(json_data['total_balance']) - check
+                sent = False
+                break
+            while True:
+                expense = request_data.get(categories[c])
+                if is_float(expense):
+                    json_data[categories[c]] = "{:.2f}".format(float(expense))
+                    check += float(expense)
+                    break
+                else:
+                    print("Error entering value")
+                    break
+            if check > float(json_data['total_balance']):
+                print("Your budgeting exceeded the total budget, please re-enter all the values again")
+                check = 0
+                break
+    with open("info.json", "w") as file:
+        json.dump(json_data, file)
+
+
 def is_float(value):
     try:
         # Try to convert the value to a float
@@ -98,3 +154,5 @@ def get_data():
 
 
 
+if __name__ == "__main__":
+    app.run(debug=True)
