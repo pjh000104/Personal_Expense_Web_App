@@ -16,8 +16,8 @@ create_file()
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-
-    return render_template("index.html")
+    x=5
+    return render_template("index.html", x=x)
 
 
 @app.route('/initialize_balance', methods=['GET', 'POST'])
@@ -27,23 +27,24 @@ def initialize_balance():
     request_data = request.form
     write_data(request_data, json_data)
 
-
-    
     return render_template("index.html")
-
 
 
 @app.route('/spend', methods=['GET', 'POST'])
 def spend_money():
     # get data of category and the amount and modify the json
-    return
+    json_data = get_data()
+    request_data = request.form
+    useMoney(request_data, json_data)
+
+    return json_data[request_data.get("category")]
 
 
 @app.route('/check_balance', methods=['GET'])
 def check_balance():
+    json_data = get_data()
     # return some kind get_data
-    return
-
+    return render_template('check_balance.html', json_data=json_data)
 
 
 def start_software():
@@ -153,6 +154,37 @@ def get_data():
         return data
 
 
+def useMoney(request_data, json_data):
+
+    while True:
+        category = request_data.get("category")
+        
+        if category not in json_data:
+            print(f"Category '{category}' does not exist. Please try again.")
+            continue  # Continue to prompt for a valid category
+
+        break  # Exit the loop if the category is valid
+
+    while True:
+        expense = request_data.get("expense")
+        
+        if is_float(expense):
+            expense = float(expense)
+            break
+        else:
+            print("Invalid amount entered. Please enter a valid number.")
+    
+    category_budget = float(json_data[category])
+
+    if category_budget - expense >= 0:
+        json_data[category] = category_budget - expense
+        json_data['total_balance'] = float(json_data['total_balance']) - expense
+        with open("info.json", "w") as file:
+            json.dump(json_data, file)
+        print(f"{category} has ${json_data[category]:.2f} left.")
+    else:
+        print(f"Insufficient funds in {category}. You have ${category_budget:.2f} left.")
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
