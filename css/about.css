@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{ }
+/*--------------=>Basic calsses,=--------- */
+.basic-color{
+    color: rgb(219, 121, 9) !important;
+}
+.active{
+    color: rgba(247, 131, 7, 0.75) !important;
+}
+.nav-item{
+    font-family: "Concert One", sans-serif !important;
+}
+
+.text-white{
+    color:white;
+}
+.over-h{
+overflow: hidden;
+}
+.fs-l{
+font-size:70px !important;
+font-weight: 700 !important;
+}
+.font-f1{
+    font-family: "Pacifico", cursive;
+}
+.font-f2{  
+    font-family: "Exo", sans-serif;
+}
+.btn-primary{
+    background-color: black !important;
+    border-color: black !important;
+}
+.btn-primary:hover , .btn-primary:active{
+    border-color:rgb(71, 69, 69) !important;
+    background-color:rgb(218, 117, 3) !important ;
+}
+.btn-primary:focus,.btn-primary:active:focus{
+    box-shadow: 0 0 0 .25rem rgba(253, 158, 49, 0.5) !important;
+    border: transparent;
+    background-color:rgb(218, 117, 3) !important ;
+}
+.rounded-5{
+    border-radius: 50px !important;
+}
+
+.form-control:focus {
+    border-color: #feec86 !important;
+    box-shadow: 0 0 0 .25rem rgba(234, 175, 74, 0.532) !important;
+}
+    /*-----------------------------------*/
+.navbar-dark .navbar-nav .nav-link:focus, 
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:active {
+    color: rgba(247, 131, 7, 0.75) !important;
+} 
+.container{
+    height: 70vh;
+}
+
+.heading:after{
+    content: "";
+    display: block;
+    width: calc(100% - 200px);
+    height: 3px;
+    border: 3px solid black;
+}

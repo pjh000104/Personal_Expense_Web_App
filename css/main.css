@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{ }
+/*--------------=>Basic calsses,=--------- */
+.basic-color{
+    color: rgb(219, 121, 9) !important;
+}
+.active{
+    color: rgba(247, 131, 7, 0.75) !important;
+}
+
+
+.text-white{
+    color:white;
+}
+.fs-l{
+font-size:60px !important;
+font-family: "Pacifico", cursive;
+}
+.btn-primary{
+    background-color: black !important;
+    border-color: black !important;
+}
+.btn-primary:hover , .btn-primary:active{
+    border-color:rgb(71, 69, 69) !important;
+    background-color:rgb(218, 117, 3) !important ;
+}
+.btn-primary:focus,.btn-primary:active:focus{
+    box-shadow: 0 0 0 .25rem rgba(253, 158, 49, 0.5) !important;
+    border: transparent;
+    background-color:rgb(218, 117, 3) !important ;
+}
+.rounded-5{
+    border-radius: 50px !important;
+}
+
+.form-control:focus {
+    border-color: #feec86 !important;
+    box-shadow: 0 0 0 .25rem rgba(234, 175, 74, 0.532) !important;
+}
+    /*-----------------------------------*/
+.navbar-dark .navbar-nav .nav-link:focus, 
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:active {
+    color: rgba(247, 131, 7, 0.75) !important;
+}   
+body {
+    background: url(../img/bg-new.png) no-repeat;
+    background-size: 100%;
+    font-family: "Concert One", sans-serif !important;
+    font-weight: 400;
+}
+h1{
+    animation-duration: 2s !important;
+}
+.main-box{
+    width: 60% !important;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(82, 49, 3, 0.878) 35%, rgba(7,60,70,1) 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 15s linear infinite alternate-reverse;
+    height: 100%;
+    padding: 60px !important;
+    padding-top: 70px !important;
+}
+label.input1{
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+}
+/*animation*/
+@keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  /*----------*/
