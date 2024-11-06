@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Data</title>
+</head>
+<body>
+    <p>food: </p>{{data.get("food")}}
+    <h1>Submit Your Data</h1>
+    <form action="/initialize_balance" method="post">
+        <label for="total_balance">Total Balance:</label>
+        <input type="text" id="name" name="total_balance">
+        
+        <label for="food">food:</label>
+        <input type="text" id="food" name="food">
+
+        <label for="email">house_hold:</label>
+        <input type="text" id="email" name="house_hold">
+                
+        <label for="email">clothing:</label>
+        <input type="text" id="email" name="clothing">
+                
+        <label for="email">personal_expense:</label>
+        <input type="text" id="email" name="personal_expense">
+                
+        <label for="email">subscription:</label>
+        <input type="text" id="email" name="subscription">
+                
+        <label for="email">housing_expense:</label>
+        <input type="text" id="email" name="housing_expense">
+                
+        <label for="email">insurance:</label>
+        <input type="text" id="email" name="insurance">
+                        
+        <label for="email">other:</label>
+        <input type="text" id="email" name="other">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
