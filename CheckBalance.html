@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/CheckBalance.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../main/js/Jquery.js"></script>
+    <link rel="icon" href="./img/logo.png" sizes="32x32">
+    <title>Expense Tracker</title>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark animate__slideInDown animate__animated ">
+    <a class="navbar-brand" href="#">
+        <img class="ms-3" src="./img/logo.png" width="70" height="40" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link reset  fs-5 me-5" href="./main.html">Reset</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5  me-5" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5  me-5" href="./">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5  active me-5" href="./CheckBalance.html">Check Balance</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container mt-5 ">
+    <div class="heading h1 text-center fw-bold  p-3">Press any box to show the amount</div>
+    <div class="upper mt-4  m-auto rounded-3 border-2">
+        <div class="row mt-4 ">
+            <div class="col-md-3 mt-4 mb-2 ">
+                <div class="animation animate__animated animate__slideInLeft">
+                    <div class="element me-2 fw-bold bg-ch-secondary   text-center  rounded-4  p-5 ">Total Balance</div>
+                </div>
+            </div>
+            <div class="col-md-3 mt-4 mb-2 "> 
+                <div class="animation animate__animated animate__fadeIn">
+                    <div class="element me-2 p-5  fw-bold bg-ch-secondary   text-center  rounded-4">Food</div>
+                </div>
+            </div>
+            <div class="col-md-3   mt-4 mb-2 ">
+                <div class="animation animate__animated animate__fadeIn">
+                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">Household Items</div>
+                </div>
+            </div>
+            <div class="col-md-3 mt-4 mb-2 ">
+                <div class="animation animate__animated animate__slideInRight">
+                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2 ">Clothing</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="lower m-auto">
+        <div class="row mt-5 ">
+            <div class="col-md-3 mt-4 mb-2 ">
+                <div class="animation animate__animated animate__slideInLeft">
+                    <div class="element me-2 fw-bold bg-ch-secondary   text-center  rounded-4  p-5 ">Personal</div>
+                </div>
+            </div>
+            <div class="col-md-3  mt-4 mb-2 ">
+                <div class="animation animate__animated animate__fadeIn">
+                    <div class="element me-2 p-5  fw-bold bg-ch-secondary   text-center  rounded-4">Subscription</div>
+                </div> 
+            </div>
+            <div class="col-md-3   mt-4 mb-2 ">
+                <div class="animation animate__animated animate__fadeIn">
+                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">Household Expenses </div>
+                </div>
+            </div>
+            <div class="col-md-3 mt-4 mb-2 ">
+                <div class="animation animate__animated animate__slideInRight">
+                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2 ">Insurance</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
