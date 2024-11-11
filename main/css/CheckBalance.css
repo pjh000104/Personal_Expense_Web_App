@@ -78,6 +78,12 @@ body{
 .heading{
     color: rgba(30, 31, 32, 0.812) !important;
 }
+.flip-card{
+    perspective: 1000px;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 /*animation*/
 @keyframes gradientMove {
     0% {
