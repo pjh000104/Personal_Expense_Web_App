@@ -14,6 +14,11 @@ def create_file():
 create_file()
 
 
+@app.route('/abc', methods=['GET', 'POST'])
+def abc():
+    return render_template("main.html")
+
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     x=5
@@ -27,7 +32,7 @@ def initialize_balance():
     request_data = request.form
     write_data(request_data, json_data)
 
-    return render_template("index.html")
+    return render_template("about.html")
 
 
 @app.route('/spend', methods=['GET', 'POST'])
@@ -44,7 +49,7 @@ def spend_money():
 def check_balance():
     json_data = get_data()
     # return some kind get_data
-    return render_template('check_balance.html', json_data=json_data)
+    return render_template('checkBalance.html', json_data=json_data)
 
 
 def start_software():

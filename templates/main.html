@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/Jquery.js') }}"></script>
+    <link rel="icon" href="./img/logo.png" sizes="32x32">
+
+    <title>Expense Tracker</title>
+    <style>
+        /* Hide all steps except the active one */
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<!--
+ Navigation Bar 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark animate__slideInDown animate__animated ">
+    <a class="navbar-brand" href="#">
+        <img class="ms-3" src="./img/logo.png" width="70" height="40" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link  active fs-5 me-5" href="./main.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5  me-5" href="./about.html">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5  me-5" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fs-5  me-5" href="./CheckBalance.html">Check Balance</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+-->
+<div class="container text-center pt-5  main-box rounded-5" style="margin-top: 150px;">
+    <h1 class="animate__fadeIn animate__animated animate_slow text-white" >Welcome to <span class=" basic-color fs-l"> Budget Tracker</span></h1>
+
+    <div class="container mt-5  animate__fadeIn animate__animated  ">
+            <form action = "/intialize_balance" id="multiStepForm" action="post">
+                <!-- Step 1: Total balance-->
+                <div class="step active mb-5" id="step1">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input1">Enter Your Total Balance</label>
+                        <input name="total_balance" required type="number" class="form-control w-75 m-auto" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
+                    </div>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+                <!-- Step 2: Food -->
+                <div class="step mb-5" id="step2">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input2">Food</label>
+                        <input name="food" required type="number" class="form-control w-75 m-auto" id="input2" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+        
+                <!-- Step 3: Household Items / Supplies -->
+                <div class="step mb-5" id="step3">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input3">Household Items / Supplies</label>
+                        <input name="house_hold" required type="number" class="form-control w-75 m-auto" id="input3" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+        
+                <!-- Step 4: Clothing -->
+                <div class="step mb-5" id="step4">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input4">Clothing</label>
+                        <input name="clothing" required type="number" class="form-control w-75 m-auto" id="input4" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+        
+                <!-- Step 5: Personal -->
+                <div class="step mb-5" id="step5">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input5">Personal</label>
+                        <input name="personal_expense" required type="number" class="form-control w-75 m-auto" id="input5" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+        
+                <!-- Step 6: Subscription -->
+                <div class="step mb-5" id="step6">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input6">Subscription</label>
+                        <input name="subscription" required type="number" class="form-control w-75 m-auto" id="input6" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+        
+                <!-- Step 7: Household Expenses -->
+                <div class="step mb-5" id="step7">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input7">Household Expenses (electricity, water, garbage, etc.)</label>
+                        <input name="housing_expense" required type="number" class="form-control w-75 m-auto" id="input7" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                    <button type="button" class="btn btn-primary mt-5 next">Next</button>
+                </div>
+        
+                <!-- Step 8: Insurance -->
+                <div class="step mb-5" id="step8">
+                    <div class="form-group">
+                        <label class="text-white-50 fs-3 mb-4" for="input8">Insurance</label>
+                        <input name="insurance" required  type="number" class="form-control w-75 m-auto focused" id="input8" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
+                    </div>
+                    <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
+                     <button  type="submit" class="btn btn-success mt-5"> Submit</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        <div id="notification" class="alert alert-success text-black top-50 start-50 translate-middle" role="alert">
+           Submitted successfully!
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+  /*      let currentStep = 0;
+        const steps = document.querySelectorAll('.step');
+        const inputValues = {}; // HashMap to store input values
+
+        function showStep(n) {
+            steps.forEach((step, index) => {
+                step.classList.toggle('active', index === n);
+            });
+            document.getElementById("prevBtn").style.visibility = n === 0 ? 'hidden' : 'visible';
+            document.getElementById("nextBtn").textContent = n === steps.length - 1 ? "Track!" : "Next";
+        }
+
+        function changeStep(n) {
+            // Save input value to the hashmap
+            const currentInput = steps[currentStep].querySelector('input');
+            if (currentInput) {
+                inputValues[currentInput.labels[0].innerText] = currentInput.value;
+            }
+            currentStep += n;
+            if (currentStep >= steps.length) {
+                console.log(inputValues); // You can replace this with your form submission logic
+                alert("Form submitted with values: " + JSON.stringify(inputValues));
+                return;
+            }
+            showStep(currentStep);
+        }
+*/
+        // Initialize
+        showStep(currentStep);
+
+        function validatePositiveInput(input) {
+            // Remove any non-numeric characters and limit it to positive values
+            input.value = input.value.replace(/[^0-9.]/g, '');
+
+            // Ensure it doesn't start with a decimal point or zero if it's meant to be a positive integer
+            if (input.value.startsWith('.')) {
+                input.value = '';
+            }
+            if (input.value && parseFloat(input.value) < 0) {
+                input.value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
