@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template
+from flask import Flask, request, redirect, render_template, redirect, url_for
 import json
 app = Flask(__name__)
 
@@ -20,9 +20,8 @@ def abc():
 
 
 @app.route('/', methods=['GET', 'POST'])
-def index():
-    x=5
-    return render_template("index.html", x=x)
+def about():
+    return render_template("about.html")
 
 
 @app.route('/initialize_balance', methods=['GET', 'POST'])
@@ -30,9 +29,11 @@ def initialize_balance():
     # get the data and save it in the json
     json_data = get_data()
     request_data = request.form
+    print(request_data)
+
     write_data(request_data, json_data)
 
-    return render_template("about.html")
+    return redirect(url_for('about'))
 
 
 @app.route('/spend', methods=['GET', 'POST'])
@@ -45,8 +46,8 @@ def spend_money():
     return json_data[request_data.get("category")]
 
 
-@app.route('/check_balance', methods=['GET'])
-def check_balance():
+@app.route('/checkBalance', methods=['GET'])
+def checkBalance():
     json_data = get_data()
     # return some kind get_data
     return render_template('checkBalance.html', json_data=json_data)

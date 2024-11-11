@@ -31,17 +31,17 @@ $(document).ready(function() {
     });
 
     // Handle form submission
-    $('#multiStepForm').submit(function(event) {
-        event.preventDefault(); // Prevent default form submission
+    // $('#multiStepForm').submit(function(event) {
+    //     event.preventDefault(); // Prevent default form submission
 
-        // Show notification
-        $('#notification').fadeIn().delay(800).fadeOut(); // Show for 2 seconds
+    //     // Show notification
+    //     $('#notification').fadeIn().delay(800).fadeOut(); // Show for 2 seconds
 
-        // Redirect to the CheckBalance.html page after a delay
-        setTimeout(function() {
-            window.location.href = './CheckBalance.html';
-        }, 800); // Redirect after 2 seconds
-    });
+    //     // Redirect to the CheckBalance.html page after a delay
+    //     setTimeout(function() {
+    //         window.location.href = './CheckBalance.html';
+    //     }, 800); // Redirect after 2 seconds
+    // });
 
 // Function to validate positive input
 function validatePositiveInput(input) {

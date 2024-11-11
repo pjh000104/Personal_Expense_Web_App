@@ -58,7 +58,7 @@
     <h1 class="animate__fadeIn animate__animated animate_slow text-white" >Welcome to <span class=" basic-color fs-l"> Budget Tracker</span></h1>
 
     <div class="container mt-5  animate__fadeIn animate__animated  ">
-            <form action = "/intialize_balance" id="multiStepForm" action="post">
+            <form action = "/initialize_balance" id="multiStepForm" method="post">
                 <!-- Step 1: Total balance-->
                 <div class="step active mb-5" id="step1">
                     <div class="form-group">
@@ -134,7 +134,7 @@
                         <input name="insurance" required  type="number" class="form-control w-75 m-auto focused" id="input8" oninput="validatePositiveInput(this)" placeholder="Enter Your Amount">
                     </div>
                     <button type="button" class="btn btn-secondary prev mt-5">Previous</button>
-                     <button  type="submit" class="btn btn-success mt-5"> Submit</button>
+                    <button  type="submit" class="btn btn-success mt-5"> Submit</button>
                 </div>
             </form>
             </div>
