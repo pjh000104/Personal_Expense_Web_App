@@ -99,23 +99,27 @@ def start_software():
 
 def write_data(request_data, json_data):
     sent = True
-    check = 0
+    check = 0.00
     categories = ['total_balance', 'food', 'house_hold', 'clothing', 
                 'personal_expense', 'subscription',
                 'housing_expense', 'insurance', 'other']
-
-    while True:
-        total_balance = request_data.get("total_balance")
-        if is_float(total_balance):
-            json_data['total_balance'] = float(total_balance)
-            break
-        else:
-            print("Please input an integer or float")
+    total_balance = request_data.get('total_balance')
+    total_balance = "{:.2f}".format(float(total_balance))
+    json_data['total_balance'] = total_balance
+    # while True:
+        
+        # break
+        # if is_float(total_balance):
+        #     json_data['total_balance'] = total_balance
+        #     break
+        # else:
+        #     print("Please input an integer or float")
 
     while sent:
         for c in range(1, len(categories)):
             if categories[c] == 'other':
-                json_data['other'] = float(json_data['total_balance']) - check
+                total_balance = float(total_balance)
+                json_data['other'] =  "{:.2f}".format(float(total_balance - check))
                 sent = False
                 break
             while True:
