@@ -21,7 +21,7 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark animate__slideInDown animate__animated ">
     <a class="navbar-brand" href="#">
-        <img class="ms-3" src="./img/logo.png" width="70" height="40" alt="Logo">
+        <img class="ms-3" src="{{ url_for('static', filename='images/logo.png') }}" width="70" height="40" alt="Logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
                 <a class="nav-link reset  fs-5 me-5" href="{{ url_for('add_balance')}}">Reset</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fs-5  me-5" href="./about.html">About</a>
+                <a class="nav-link fs-5  me-5" href="{{ url_for('about')}}">About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link fs-5  me-5" href="./">Contact</a>
