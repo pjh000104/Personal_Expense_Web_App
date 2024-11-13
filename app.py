@@ -14,8 +14,8 @@ def create_file():
 create_file()
 
 
-@app.route('/abc', methods=['GET', 'POST'])
-def abc():
+@app.route('/add_balance', methods=['GET', 'POST'])
+def add_balance():
     return render_template("main.html")
 
 
