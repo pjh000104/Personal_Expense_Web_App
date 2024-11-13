@@ -72,7 +72,7 @@ font-weight: 700 !important;
     width: calc(100% - .20rem);
 }*/
 body{
-    background: url(../img/check-balance-img.png) no-repeat;
+    background: url(../images/check-balance-img.png) no-repeat;
     background-size: 100%;
 }
 .container {
