@@ -44,72 +44,146 @@
     </div>
 </nav>
 <div class="container mt-5 ">
-    <div class="heading h1 text-center fw-bold  p-3">Press any box to show the amount</div>
-    <div class="upper mt-4  m-auto rounded-3 border-2">
-        <div class="row mt-4 ">
-            <div class="col-md-3 mt-4 mb-2 ">
-                <div class="animation animate__animated animate__slideInLeft">
-                    <div class="element me-2 fw-bold bg-ch-secondary   text-center  rounded-4  p-5 ">Total Balance</div>
-                    <div class="element me-2 fw-bold bg-ch-secondary   text-center  rounded-4  p-5 ">{{json_data.total_balance}}</div>
+    <div class="heading h1 text-center fw-bold  p-3">Just hover over a box !</div>
+    <div class="upper mt-4 pt-2   m-auto rounded-3 border-2">
+        <div class="row mt-4  ">
+            <div class="col-md-3 p-2 h-100">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__slideInLeft h-100">
+                            <div class="element font-f1  me-2 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
+                                Total Balance
+                            </div>
+                        </div>
+                        <div class="flip-box-back  bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element text-center  fw-bold">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-4 mb-2 "> 
-                <div class="animation animate__animated animate__fadeIn">
-                    <div class="element me-2 p-5  fw-bold bg-ch-secondary   text-center  rounded-4">Food</div>
-                    <div class="element me-2 fw-bold bg-ch-secondary   text-center  rounded-4  p-5 ">{{json_data.food}}</div>
+            <div class="col-md-3 p-2">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__fadeIn  h-100">
+                            <div class="element me-2 font-f1 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
+                                remeber
+                            </div>
+                        </div>
+                        <div class="flip-box-back bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element fw-bold text-center">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3   mt-4 mb-2 ">
-                <div class="animation animate__animated animate__fadeIn">
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">Household Items</div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.house_hold}}</div>
-                    
+            <div class="col-md-3 p-2">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__fadeIn h-100">
+                            <div class="element me-2 fw-bold font-f1 bg-ch-secondary text-center rounded-4 p-5 ">
+                                Food
+                            </div>
+                        </div>
+                        <div class="flip-box-back bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element fw-bold text-center">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-4 mb-2 ">
-                <div class="animation animate__animated animate__slideInRight">
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2 ">Clothing</div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.clothing}}</div>
+            <div class="col-md-3 p-2">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__slideInRight h-100">
+                            <div class="element me-2 fw-bold font-f1 bg-ch-secondary text-center rounded-4 p-5 ">
+                                Coffee
+                            </div>
+                        </div>
+                        <div class="flip-box-back bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element fw-bold text-center">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+           
         </div>
     </div>
-    <div class="lower m-auto">
+    <div class="lower m-auto mt-4 pt-3 ">
         <div class="row mt-5 ">
-            <div class="col-md-3 mt-4 mb-2 ">
-                <div class="animation animate__animated animate__slideInLeft">
-                    <div class="element me-2 fw-bold bg-ch-secondary   text-center  rounded-4  p-5 ">Personal</div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.personal_expense}}</div>
+            <div class="col-md-3 p-2 h-100  margint-x-lg">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__slideInLeft h-100">
+                            <div class="element   me-2 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
+                                personal_expense
+                            </div>
+                        </div>
+                        <div class="flip-box-back  bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element text-center  fw-bold">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3  mt-4 mb-2 ">
-                <div class="animation animate__animated animate__fadeIn">
-                    <div class="element me-2 p-5  fw-bold bg-ch-secondary   text-center  rounded-4">Subscription</div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.subscription}}</div>
-                </div> 
-            </div>
-            <div class="col-md-3   mt-4 mb-2 ">
-                <div class="animation animate__animated animate__fadeIn">
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">Housing Expenses </div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.housing_expense}}</div>
+            <div class="col-md-3 p-2 h-100  margint-x-lg">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__fadeIn h-100">
+                            <div class="element   me-2 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
+                                Subscription
+                            </div>
+                        </div>
+                        <div class="flip-box-back  bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element text-center  fw-bold">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 mt-4 mb-2 ">
-                <div class="animation animate__animated animate__slideInRight">
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2 ">Insurance</div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.insurance}}</div>
+            <div class="col-md-3 p-2 h-100  margint-x-lg">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__fadeIn h-100">
+                            <div class="element   me-2 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
+                                Household Expenses
+                            </div>
+                        </div>
+                        <div class="flip-box-back  bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element text-center  fw-bold">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3   mt-4 mb-2 ">
-                <div class="animation animate__animated animate__fadeIn">
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">Other </div>
-                    <div class="element p-5  fw-bold bg-ch-secondary   text-center  rounded-4 me-2">{{json_data.other}}</div>
+            <div class="col-md-3 p-2 h-100  margint-x-lg">
+                <div class="flip-box h-100 ">
+                    <div class="flip-box-inner h-100">
+                        <div class="flip-box-front animation animate__animated animate__slideInRight h-100">
+                            <div class="element   me-2 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
+                                Insurance
+                            </div>
+                        </div>
+                        <div class="flip-box-back  bg-ch-secondary text-center rounded-4 p-5">
+                            <div class="element text-center  fw-bold">
+                                $1,000
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
