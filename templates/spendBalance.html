@@ -50,9 +50,10 @@
     <!--Spend content -->
     <section class="over-h">
         <div class="contianer over-h">
+            <div class="heading h2 text-center fw-bold mt-5 animate__animated animate__fadeIn  p-3">Please enter the amount you have spent!</div>
             <div class="row mt-5 pt-5 over-h ">
-                <div class="col-md-6 text-center">
-                    <div class="mb-2">
+                <div class="col-md-6 text-center left-side">
+                    <div class="mb-2 animate__animated animate__fadeIn ">
                         <form class="text-center" action="/spend/food" method="post" id="foodForm">
                             <label class="bg-white-30  mb- px-3 py-1 rounded-3 mb-4" for="inputSpend">Food: ${{ json_data.food }}</label>
                             <div class="d-flex justify-content-center">
@@ -63,7 +64,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="mb-2 " >
+                    <div class="mb-2 animate__animated animate__fadeIn " >
                         <form class="text-center  " action="/spend/house_hold" method="post">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">
                                     Household Items / Supplies: ${{ json_data.house_hold }}
@@ -77,8 +78,8 @@
                 </div>
             </div>
             <div class="row mt-5 pt-5 over-h">
-                <div class="col-md-6 text-center">
-                    <div class="mb-2 " >
+                <div class="col-md-6 text-center left-side">
+                    <div class="mb-2 animate__animated animate__fadeIn " >
                         <form class="text-center  " action="/spend/clothing" method="post">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Clothing: ${{ json_data.clothing }}</label>
                                 <div class="d-flex justify-content-center">
@@ -89,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="mb-2 " >
+                    <div class="mb-2 animate__animated animate__fadeIn " >
                         <form class="text-center  " action="/spend/personal_expense" method="post">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Personal Expenses: ${{ json_data.personal_expense }}</label>
                                 <div class="d-flex justify-content-center">
@@ -101,8 +102,8 @@
                 </div>
             </div>
             <div class="row mt-5 pt-5 over-h">
-                <div class="col-md-6 text-center">
-                    <div class="mb-2 " >
+                <div class="col-md-6 text-center left-side">
+                    <div class="mb-2 animate__animated animate__fadeIn " >
                         <form class="text-center  " action="/spend/subscription" method="post">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Subscription: ${{ json_data.subscription }}</label>
                                 <div class="d-flex justify-content-center">
@@ -113,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="mb-2 " >
+                    <div class="mb-2 animate__animated animate__fadeIn " >
                         <form class="text-center  " action="/spend/housing_expense">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Household Expenses: ${{ json_data.food }} </label>
                                 <div class="d-flex justify-content-center">
@@ -126,11 +127,11 @@
             </div>
             <div class="row over-h  mt-5 pt-5 mb-5 ">
                 <div class="col-md-12 text-center">
-                    <div class="mb-2 " >
+                    <div class="mb-2 animate__animated animate__fadeIn " >
                         <form class="text-center  " action="/spend/insurance">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Insurance: ${{ json_data.insurance }}</label>
                                 <div class="d-flex justify-content-center">
-                                    <input id="inputSpend" name="food" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
+                                    <input id="inputSpend" name="food" type="number" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-4 submit">Spend</button>
                         </form>
