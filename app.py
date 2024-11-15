@@ -36,14 +36,21 @@ def initialize_balance():
     return redirect(url_for('about'))
 
 
-@app.route('/spend', methods=['GET', 'POST'])
-def spend_money():
+@app.route('/spend_balance')
+def spend_balance_page():
+    json_data = get_data()
+    return render_template("spendBalance.html", json_data=json_data)
+
+
+@app.route('/spend/<category>', methods=['GET', 'POST'])
+def spend_money(category):
     # get data of category and the amount and modify the json
     json_data = get_data()
     request_data = request.form
-    useMoney(request_data, json_data)
-
-    return json_data[request_data.get("category")]
+    print(request_data)
+    useMoney(request_data, json_data, category)
+    return redirect(url_for('spend_balance_page'))
+    
 
 
 @app.route('/checkBalance', methods=['GET'])
@@ -51,50 +58,6 @@ def checkBalance():
     json_data = get_data()
     # return some kind get_data
     return render_template('checkBalance.html', json_data=json_data)
-
-
-def start_software():
-    create_file()
-    data = get_data()
-
-    sent = True
-    check = 0
-
-    categories = ['total_balance', 'food', 'house_hold', 'clothing', 
-                  'personal_expense', 'subscription',
-                  'housing_expense', 'insurance', 'other']
-
-    print("Hello welcome to the Personal_Expense")
-
-    while True:
-        total_balance = input("What is your total budget for this month: " )
-        if is_float(total_balance):
-            data['total_balance'] = total_balance
-            break
-        else:
-            print("Please input an integer or float")
-
-
-    while sent == True:
-        for c in range(1, len(categories)):
-            if categories[c] == 'other':
-                data['other'] = int(data['total_balance']) - check
-                sent = False
-                break 
-            while True:
-                expense = input("Enter expense for " + categories[c] + ": ")
-                if is_float(expense):
-                    data[categories[c]] = int(expense)
-                    check += int(expense)
-                    break
-                else:
-                    print("Error entering value")
-            if check > int(data['total_balance']):
-                print("Your budgeting exceeded the total budget, please re-enter all the values again")
-                check = 0
-                break   
-    with open("info.json", "w") as file:
-        json.dump(data, file)
 
 
 def write_data(request_data, json_data):
@@ -119,7 +82,7 @@ def write_data(request_data, json_data):
         for c in range(1, len(categories)):
             if categories[c] == 'other':
                 total_balance = float(total_balance)
-                json_data['other'] =  "{:.2f}".format(float(total_balance - check))
+                json_data['other'] = "{:.2f}".format(float(total_balance - check))
                 sent = False
                 break
             while True:
@@ -152,10 +115,10 @@ def is_float(value):
 def create_file():
     with open("info.json", "w") as file:
         json.dump({
-                "total_balance":0, "food":0, "house_hold":0, "clothing":0,
-                "personal_expense":0, "subscription":0,"housing_expense":0,
-                "insurance":0,"other":0}, file)
-        
+                "total_balance": 0, "food": 0, "house_hold": 0, "clothing": 0,
+                "personal_expense": 0, "subscription": 0, "housing_expense": 0,
+                "insurance": 0, "other": 0}, file)  
+      
 
 # A function which return's the dictionary/hashmap within the file          
 def get_data():
@@ -164,11 +127,8 @@ def get_data():
         return data
 
 
-def useMoney(request_data, json_data):
-
-    while True:
-        category = request_data.get("category")
-        
+def useMoney(request_data, json_data, category):
+    while True:        
         if category not in json_data:
             print(f"Category '{category}' does not exist. Please try again.")
             continue  # Continue to prompt for a valid category
@@ -176,25 +136,25 @@ def useMoney(request_data, json_data):
         break  # Exit the loop if the category is valid
 
     while True:
-        expense = request_data.get("expense")
-        
+        expense = "{:.2f}".format(float(request_data.get(category)))
+        expense = float(expense)
+
         if is_float(expense):
             expense = float(expense)
             break
         else:
             print("Invalid amount entered. Please enter a valid number.")
-    
-    category_budget = float(json_data[category])
 
+    category_budget = "{:.2f}".format(float((json_data[category])))
+    category_budget = float(category_budget)
     if category_budget - expense >= 0:
-        json_data[category] = category_budget - expense
-        json_data['total_balance'] = float(json_data['total_balance']) - expense
+        json_data[category] = "{:.2f}".format(float(category_budget) - float(expense))
+        json_data['total_balance'] = "{:.2f}".format(float(json_data['total_balance']) - (float(expense)))
         with open("info.json", "w") as file:
             json.dump(json_data, file)
-        print(f"{category} has ${json_data[category]:.2f} left.")
     else:
         print(f"Insufficient funds in {category}. You have ${category_budget:.2f} left.")
-    
+
 
 if __name__ == "__main__":
     app.run(debug=True)
