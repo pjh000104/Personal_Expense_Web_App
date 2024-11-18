@@ -54,7 +54,7 @@ label{
     color: rgba(247, 131, 7, 0.75) !important;
 }   
 body {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(82, 49, 3, 0.878) 50%, rgba(7,60,70,1) 100%);
+    background: linear-gradient(90deg,  rgba(7,60,70,1)  0%, rgba(82, 49, 3, 0.878) 50%, rgba(7,60,70,1) 100%);
 
     font-family: "Concert One", sans-serif !important;
     font-weight: 400;
