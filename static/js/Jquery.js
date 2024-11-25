@@ -76,3 +76,35 @@ $('input').on('keypress', function(event) {
     });
 
 });
+
+
+$(document).ready(function() {
+    let isActionActive = false;
+
+    $('#navbar-toggler').click(function() {
+        if (!isActionActive) {
+            // Start the action
+            isActionActive = true;
+            $('#navbar-collapse').addClass("show");
+            
+            // You can add your action code here
+            // For example, start a timer or an animation
+        } else {
+            // Stop the action
+            isActionActive = false;
+            $('.navbar-collapse').removeClass("show");
+            // You can add your code to stop the action here
+            // For example, clear a timer or stop an animation
+        }
+        $('#toggleButton').click(function() {
+            // Get the current state of aria-expanded
+            let isExpanded = $(this).attr('aria-expanded') === 'true';
+    
+            // Toggle the aria-expanded attribute
+            $(this).attr('aria-expanded', !isExpanded);
+    
+            // Update the status text
+            $('#status').text('Current state: ' + !isExpanded);
+        });
+    });
+});

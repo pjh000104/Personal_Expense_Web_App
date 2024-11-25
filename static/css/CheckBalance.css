@@ -154,3 +154,18 @@ body{
       background-position: 200% center;
     }
   }
+/*--Respnsive --*/
+@media only screen and (max-width: 600px) {
+    
+    box-r-1{
+       margin-bottom: ; 
+    }
+    box-r-2{
+       margin-top: ; 
+       margin-bottom: 
+    }
+    box-r-3{
+        margin-top: ;
+        margin-bottom: ;
+    }
+}
