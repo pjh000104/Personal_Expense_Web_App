@@ -66,3 +66,13 @@ font-weight: 700 !important;
     height: 3px;
     border: 3px solid black;
 }
+/*resposive*/
+@media only screen and (max-width: 700px) {
+    .mob-center{
+        text-align: center;
+    }
+    body{
+        padding-bottom: 650px;
+    }
+
+}

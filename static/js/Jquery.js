@@ -107,4 +107,23 @@ $(document).ready(function() {
             $('#status').text('Current state: ' + !isExpanded);
         });
     });
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+    
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+    
+        // Basic validation
+        if (username === '' || password === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+    
+        // Here you would typically send the username and password to your server
+        console.log('Username:', username);
+        console.log('Password:', password);
+    
+        // Simulate a successful login
+        alert('Login successful!');
+    });
 });
