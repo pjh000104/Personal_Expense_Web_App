@@ -113,11 +113,11 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="mb-2 " balances
-                        <form class="text-center  " action="/spend/housing_expense">
-                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Household Expenses: ${{ balances.food }} </label>
+                    <div class="mb-2 ">
+                        <form class="text-center  " action="/spend/housing_expense" method="POST">
+                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Household Expenses: ${{ balances.housing_expense }} </label>
                                 <div class="d-flex justify-content-center">
-                                    <input id="inputSpend" name="food" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
+                                    <input id="inputSpend" name="housing_expense" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-4 submit">Spend</button>
                         </form>
