@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+.rounded-5{
+    border-radius: 50px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{ }
+/*--------------=>Basic calsses,=--------- */
+.basic-color{
+    color: rgb(219, 121, 9) !important;
+}
+.active{
+    color: rgba(247, 131, 7, 0.75) !important;
+}
+
+
+.text-white{
+    color:white;
+}
+.fs-l{
+font-size:60px !important;
+font-family: "Pacifico", cursive;
+}
+.btn-primary{
+    background-color: black !important;
+    border-color: black !important;
+}
+.btn-primary:hover , .btn-primary:active{
+    border-color:rgb(71, 69, 69) !important;
+    background-color:rgb(218, 117, 3) !important ;
+}
+.btn-primary:focus,.btn-primary:active:focus{
+    box-shadow: 0 0 0 .25rem rgba(253, 158, 49, 0.5) !important;
+    border: transparent;
+    background-color:rgb(218, 117, 3) !important ;
+}
+.rounded-5{
+    border-radius: 50px !important;
+}
+
+.form-control:focus {
+    border-color: #feec86 !important;
+    box-shadow: 0 0 0 .25rem rgba(234, 175, 74, 0.532) !important;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/main-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+
+.container {
+    margin-top: 170px;
+}
+
+.h2{
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 500;
+    font-family: "Yuji Mai", serif;
+    font-weight: 400;
+}
+
+.btn-primary {
+    background-color: #ff9500;
+    border-color: #111213;
+    transition: background-color 2ms ease;
+}
+
+.btn-primary:hover {
+    background-color: #68b300;
+    border-color: #222222;
+}
+.main-box{
+    width: 60% !important;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(82, 49, 3, 0.878) 35%, rgba(7,60,70,1) 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 15s linear infinite alternate-reverse;
+    height: 100%;
+    padding: 60px !important;
+    padding-top: 70px !important;
+    
+}
+a{
+    transition: color 4ms ease;
+}
+a:hover {
+    color: #ca370a !important;
+}
+/*animation*/
+@keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  /*----------*/
+  @media screen and (max-width: 700px) {
+    .container{
+        margin-top: 150px;
+    }
+    .main-box{
+        width: 85% !important;
+    }
+  }
