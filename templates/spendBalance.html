@@ -54,7 +54,7 @@
                 <div class="col-md-6 text-center">
                     <div class="mb-2">
                         <form class="text-center" action="/spend/food" method="post" id="foodForm">
-                            <label class="bg-white-30  mb- px-3 py-1 rounded-3 mb-4" for="inputSpend">Food: ${{ json_data.food }}</label>
+                            <label class="bg-white-30  mb- px-3 py-1 rounded-3 mb-4" for="inputSpend">Food: ${{ balances.food }}</label>
                             <div class="d-flex justify-content-center">
                                 <input id="inputSpend" name="food" class="form-control w-50 text-center shadow-lg" oninput="validatePositiveInput(this)" placeholder="10000">
                             </div>
@@ -66,7 +66,7 @@
                     <div class="mb-2 " >
                         <form class="text-center  " action="/spend/house_hold" method="post">
                                 <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">
-                                    Household Items / Supplies: ${{ json_data.house_hold }}
+                                    Household Items / Supplies: ${{ balances.house_hold }}
                                 </label>
                                 <div class="d-flex justify-content-center">
                                     <input id="inputSpend" name="house_hold" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
@@ -80,7 +80,7 @@
                 <div class="col-md-6 text-center">
                     <div class="mb-2 " >
                         <form class="text-center  " action="/spend/clothing" method="post">
-                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Clothing: ${{ json_data.clothing }}</label>
+                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Clothing: ${{ balances.clothing }}</label>
                                 <div class="d-flex justify-content-center">
                                     <input id="inputSpend" name="clothing" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>
@@ -91,7 +91,7 @@
                 <div class="col-md-6 text-center">
                     <div class="mb-2 " >
                         <form class="text-center  " action="/spend/personal_expense" method="post">
-                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Personal Expenses: ${{ json_data.personal_expense }}</label>
+                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Personal Expenses: ${{ balances.personal_expense }}</label>
                                 <div class="d-flex justify-content-center">
                                     <input id="inputSpend" name="personal_expense" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>
@@ -104,7 +104,7 @@
                 <div class="col-md-6 text-center">
                     <div class="mb-2 " >
                         <form class="text-center  " action="/spend/subscription" method="post">
-                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Subscription: ${{ json_data.subscription }}</label>
+                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Subscription: ${{ balances.subscription }}</label>
                                 <div class="d-flex justify-content-center">
                                     <input id="inputSpend" name="subscription" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>
@@ -113,9 +113,9 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <div class="mb-2 " >
+                    <div class="mb-2 " balances
                         <form class="text-center  " action="/spend/housing_expense">
-                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Household Expenses: ${{ json_data.food }} </label>
+                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Household Expenses: ${{ balances.food }} </label>
                                 <div class="d-flex justify-content-center">
                                     <input id="inputSpend" name="food" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>
@@ -128,7 +128,7 @@
                 <div class="col-md-12 text-center">
                     <div class="mb-2 " >
                         <form class="text-center  " action="/spend/insurance">
-                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Insurance: ${{ json_data.insurance }}</label>
+                                <label  class="bg-white-30  mb-  px-3 py-1 rounded-3 mb-4" for="input1">Insurance: ${{ balances.insurance }}</label>
                                 <div class="d-flex justify-content-center">
                                     <input id="inputSpend" name="food" class="form-control w-50 text-center shadow-lg" id="input1" oninput="validatePositiveInput(this)" placeholder="10000">
                                 </div>

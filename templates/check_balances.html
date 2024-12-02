@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Balances</title>
+</head>
+<body>
+    <h1>Your Balances</h1>
+    <table border="1">
+        <tr>
+            <th>Category</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Total Balance</td>
+            <td>{{ balances['total_balance'] }}</td>
+        </tr>
+        <tr>
+            <td>Food</td>
+            <td>{{ balances['food'] }}</td>
+        </tr>
+        <tr>
+            <td>Household</td>
+            <td>{{ balances['house_hold'] }}</td>
+        </tr>
+        <tr>
+            <td>Clothing</td>
+            <td>{{ balances['clothing'] }}</td>
+        </tr>
+        <tr>
+            <td>Personal Expense</td>
+            <td>{{ balances['personal_expense'] }}</td>
+        </tr>
+        <tr>
+            <td>Subscription</td>
+            <td>{{ balances['subscription'] }}</td>
+        </tr>
+        <tr>
+            <td>Housing Expense</td>
+            <td>{{ balances['housing_expense'] }}</td>
+        </tr>
+        <tr>
+            <td>Insurance</td>
+            <td>{{ balances['insurance'] }}</td>
+        </tr>
+        <tr>
+            <td>Other</td>
+            <td>{{ balances['other'] }}</td>
+        </tr>
+    </table>
+    <a href="{{ url_for('about') }}">Go Back to Dashboard</a>
+</body>
+</html>
