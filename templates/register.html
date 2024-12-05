@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/LogIn.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Register.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -29,13 +29,13 @@
 <div class="container main-box rounded-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
+            <div class="box">
                 <div class="card-header text-center">
                     <div class="text-center  fw-bold h2 text-white mb-3 ">Creat Account</div>
                 </div>
                 <div class="form-group mt-3">
                     <!-- Requirements List -->
-                    <ul class="text-muted mb-4">
+                    <ul class=" text-white-75 mb-4">
                         <h5>Email and Password Requirements</h5>
                         <li>Please input a valid email address.</li>
                         <li>Write a password at least 8 characters long.</li>
@@ -43,19 +43,24 @@
                     <!-- Signup Form -->
                     <form id="signupForm"  method="POST" novalidate>
                         <div class="form-group mt-3">
-                            <label for="name" class="form-label">Name</label>
+                            <label for="name" class="form-label text-white fw-bold">Name</label>
                             <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="form-group mt-3">
-                            <label for="email" class="form-label">Email address</label>
+                            <label for="email" class="form-label text-white fw-bold">Email address</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <div class="form-group mt-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label text-white fw-bold">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Create Account</button>
                     </form>
+                </div>
+            </div>
+            <div class="links d-flex justify-content-between">
+                <div class="text-center mt-3 ">
+                    <a class="basic-color" href="{{ url_for('login') }}">Sign Up</a>
                 </div>
             </div>
         </div>

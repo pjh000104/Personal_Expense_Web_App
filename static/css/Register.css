@@ -19,6 +19,9 @@
 .text-white{
     color:white;
 }
+.text-white-75{
+color: rgba(91, 208, 216, 0.749);
+}
 .fs-l{
 font-size:60px !important;
 font-family: "Pacifico", cursive;
@@ -53,7 +56,7 @@ body {
 
 
 .container {
-    margin-top: 170px;
+    margin-top: 70px;
 }
 
 .h2{
