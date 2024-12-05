@@ -69,10 +69,11 @@ def add_balance():
 
 @app.route('/', methods=['GET', 'POST'])
 def about():
-    user_id = session['user_id']
     if 'user_id' not in session:
         return redirect(url_for('login'))
-    return render_template("about.html")
+    user_id = session['user_id']
+    user_name = User.query.get(user_id).name
+    return render_template("about.html", user_name=user_name)
 
 
 @app.route('/initialize_balance', methods=['GET', 'POST'])
@@ -82,7 +83,6 @@ def initialize_balance():
     user = User.query.get(user_id)
     if 'user_id' not in session:
         return redirect(url_for('login'))
-    
     if not user.expenses:
         new_expense = Expense(user_id=user_id)
         db.session.add(new_expense)
@@ -98,12 +98,14 @@ def spend_balance_page():
     user_id = session['user_id']
     if 'user_id' not in session:
         return redirect(url_for('login'))
+    
     balances = Expense.query.filter_by(user_id=user_id).first()
+    user_name = User.query.get(user_id).name
 
     if not balances:
         return "No balances found. Please initialize them first."
 
-    return render_template("spendBalance.html", balances=balances)
+    return render_template("spendBalance.html", balances=balances, user_name=user_name)
 
 
 @app.route('/spend/<category>', methods=['GET', 'POST'])
@@ -127,12 +129,13 @@ def checkBalance():
         return redirect(url_for('login'))
     
     user_id = session['user_id']
+    user_name = User.query.get(user_id).name
     balances = Expense.query.filter_by(user_id=user_id).first()
 
     if not balances:
         return "No balances found. Please initialize them first."
     
-    return render_template('checkBalance.html', balances=balances)
+    return render_template('checkBalance.html', balances=balances, user_name=user_name)
 
 @app.route('/snake_game')
 def snake_game():

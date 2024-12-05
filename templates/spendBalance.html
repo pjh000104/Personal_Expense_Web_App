@@ -48,7 +48,10 @@
                 </li>
             </ul>
         </div>
-        <a class="navbar-brand" href="{{ url_for('login')}}">Logout</a>
+        <a class="navbar-brand">
+            <a class="navbar-brand">Hello {{ user_name }}!</a>
+            <a class="navbar-brand" href="{{ url_for('login')}}">Logout</a>
+        </a>
     </nav>
     <!--End nav-->
     <!--Spend content -->
