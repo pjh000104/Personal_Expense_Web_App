@@ -108,3 +108,20 @@ a:hover {
         width: 85% !important;
     }
   }
+
+  @media screen and (max-width: 700px) {
+    body{
+        background-repeat: repeat;
+        backdrop-filter: blur(9px);
+    }
+ 
+    .container{
+        margin-top: 150px;
+    }
+    .main-box{
+        margin-top: 160px !important;
+        padding-top: 150px !important;
+        width: 85% !important;
+        padding-bottom: 180px !important;
+    }
+  }

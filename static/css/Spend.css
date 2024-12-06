@@ -78,4 +78,23 @@ body {
       background-position: 100% 50%;
     }
   }
-    
+  /*responsive*/
+  @media only screen and (max-width: 700px) {
+    .mob-center{
+        text-align: center;
+    }
+    body{
+        padding-bottom: 250px;
+    }
+    .mob-margin-top{
+        margin-top: 35px;
+    }
+    .mob-box::before {
+        content: '';
+        width: 100%;
+        margin-left: -209px;
+        position: absolute;
+        margin-top: -20px;
+        border: 2.3px dotted #567800a1;
+  }
+}

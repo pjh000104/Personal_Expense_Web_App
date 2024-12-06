@@ -25,6 +25,7 @@ overflow: hidden;
 font-size:70px !important;
 font-weight: 700 !important;
 }
+.rounded-4{border-radius: 15px;}
 .font-f1{
     font-family: "Pacifico", cursive;
     font-weight: 200;
@@ -155,17 +156,23 @@ body{
     }
   }
 /*--Respnsive --*/
-@media only screen and (max-width: 600px) {
-    
-    box-r-1{
-       margin-bottom: ; 
+@media only screen and (max-width: 700px) {
+    body{
+        background-attachment:scroll ;
+        background-repeat: repeat-y;
+        padding-bottom: 130px;
     }
-    box-r-2{
-       margin-top: ; 
-       margin-bottom: 
+    .mob-center{
+        text-align: center;
     }
-    box-r-3{
-        margin-top: ;
-        margin-bottom: ;
+    .box-r-1{
+       margin-bottom: 100px; 
+    }
+    .box-r-2{
+       margin-top:80px ; 
+  
+    }
+    .box-r-3{
+        margin-top:100px !important;
     }
 }
