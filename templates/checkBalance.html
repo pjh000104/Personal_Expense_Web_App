@@ -53,9 +53,10 @@
         </div>
         <a class="navbar-brand">
             <a class="navbar-brand">Hello {{ user_name }}!</a>
-            <a class="navbar-brand" href="{{ url_for('login')}}">Logout</a>
+            <a class="navbar-brand" href="{{ url_for('logout')}}">Logout</a>
         </a>
     </nav>
+    
     <!--Navigation End-->
 <div class="container mt-5 ">
     <div class="heading h1 text-center fw-bold  p-3">Just hover over a box !</div>
@@ -66,12 +67,12 @@
                     <div class="flip-box-inner h-100">
                         <div class="flip-box-front animation animate__animated animate__slideInLeft h-100">
                             <div class="element   me-2 fw-bold bg-ch-secondary text-center rounded-4 p-5 ">
-                                Total Balance
+                                Other
                             </div>
                         </div>
                         <div class="flip-box-back  bg-ch-secondary text-center rounded-4 p-5">
                             <div class="element text-center  fw-bold">
-                                ${{balances.total_balance}}
+                                ${{balances.other}}
                             </div>
                         </div>
                     </div>

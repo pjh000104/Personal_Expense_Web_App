@@ -8,22 +8,12 @@ import random
 
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = 'secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 migrate = Migrate(app, db)
-
-def create_file():
-    with open("info.json", "w") as file:
-        json.dump({
-                "total_balance":0, "food":0, "house_hold":0, "clothing":0,
-                "personal_expense":0, "subscription":0,"housing_expense":0,
-                "insurance":0,"other":0}, file)
-
-
-create_file()
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -215,14 +205,14 @@ def is_float(value):
         # If conversion fails, it's not a float
         return False
 
+@app.route('/logout')
+def logout():
+    if "user_id" in session:
+        print("User ID before logout:", session["user_id"])
+    session.pop("user_id", None)
+    print("User ID after logout:", session.get("user_id"))  # Should print None
+    return redirect(url_for('login'))
 
-def create_file():
-    with open("info.json", "w") as file:
-        json.dump({
-                "total_balance": 0, "food": 0, "house_hold": 0, "clothing": 0,
-                "personal_expense": 0, "subscription": 0, "housing_expense": 0,
-                "insurance": 0, "other": 0}, file)  
-      
 
 # A function which return's the dictionary/hashmap within the file          
 def get_data():
@@ -256,7 +246,6 @@ def useMoney(request_data, category):
         db.session.commit()
     else:
         print(f"Insufficient funds in {category}. You have ${category_budget} left.")
-
 
 def startgame():
     
